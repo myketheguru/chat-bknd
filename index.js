@@ -121,6 +121,12 @@ app.get('/users', (req, res) => {
     res.json({ status: 'success', users: allUsers })
 })
 
+app.get('/user/:id', (req, res) => {
+    let userId = req.params.id
+    let user = Object.values(users).find(user => user.id === userId)
+    res.json({ status: 'success', user: user })
+})
+
 app.get('/logout', function(req, res){
   // destroy the user's session to log them out
   // will be re-created next request
