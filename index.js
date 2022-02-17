@@ -101,7 +101,7 @@ function restrict(req, res, next) {
 }
 
 app.get('/', function(req, res){
-  res.redirect('/login');
+  res.send('<h1>Hello</h1>')
 });
 
 app.get('/get-all-chats', (req, res) => {
