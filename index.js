@@ -7,6 +7,7 @@
 const express = require('express');
 const hash = require('pbkdf2-password')()
 const path = require('path');
+const cors = require('cors')
 const session = require('express-session');
 const bodyParser = require('body-parser')
 const uuid = require('uuid').v4
@@ -23,6 +24,7 @@ const app = module.exports = express();
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(cors())
 app.use(bodyParser.json());
 app.use(session({
   resave: false, // don't save session if unmodified
